@@ -9,7 +9,7 @@
         font-family: 'Acme', sans-serif; /* Use 'font-family' to set the font */
     }
     li {
-        @apply px-4;
+        @apply px-6;
         @apply cursor-pointer;
     }
 }
