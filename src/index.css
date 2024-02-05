@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Caveat&family=Orbitron&family=Skranji&display=swap');
+
+@layer base {
+    body {
+        font-family: 'Acme', sans-serif; /* Use 'font-family' to set the font */
+    }
+    li {
+        @apply px-4;
+        @apply cursor-pointer;
+    }
+}
