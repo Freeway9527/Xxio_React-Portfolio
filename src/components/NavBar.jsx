@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../assets/logo.png';
-import { FaBars, Fatimes} from 'react-icons/fa';
+import { FaBars} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
@@ -11,13 +12,13 @@ const NavBar = () => {
 
          {/* This is the nav bar menu */}
         <div>
-          <ul className = 'hidden md:flex'>
-            <li>Home</li>
-            <li>About</li>
-            <li>Projects</li>
-            <li>Resume</li>
-            <li>Contact</li>
-            </ul>  
+        <ul className='hidden md:flex'>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/projects">Projects</Link></li>
+          <li><Link to="/resume">Resume</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+        </ul> 
         </div>
          {/* Hamburger menu*/}
          <div className = 'md:hidden'>
