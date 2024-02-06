@@ -22,10 +22,24 @@ const Contact = () => {
       return;
     }
 
-    // Here, you can handle the form submission, such as sending the data to a server
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
+    if (!name || !email || !message) {
+      alert("Please fill in all the fields");
+      return;
+    }
+
+    // Validation successful, submit the form
+   try {
+    const response = await submitForm({ name, email, message });
+    if (response.success) {
+      alert("Form submitted successfully");
+    } else {
+      alert("Form submission failed, Please try again");
+    }
+    } catch (error) {
+      console.error("Error submitting the form", error);
+      alert("Error occurred while submitting the form, Please try again later");
+    }
+   };
 
     // Reset the form fields here if needed
     setName("");
