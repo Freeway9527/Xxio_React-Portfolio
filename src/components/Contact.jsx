@@ -1,28 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Contact = () => {
   // Define state variables for form inputs
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [emailError, setEmailError] = useState("");
+
+  const validateEmail = (email) => {
+    // Regular expression for email validation
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(email);
+  };
 
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Here, you can handle the form submission, such as sending the data to a server 
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Message:', message);
+    if (!validateEmail(email)) {
+      setEmailError("Please enter a valid email address");
+      return;
+    }
+
+    // Here, you can handle the form submission, such as sending the data to a server
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Message:", message);
 
     // Reset the form fields here if needed
-    setName('');
-    setEmail('');
-    setMessage('');
+    setName("");
+    setEmail("");
+    setMessage("");
+    setEmailError("");
   };
 
   return (
-    <div name="contact" className="w-full h-screen bg-slate-950 flex justify-center items-center p-6">
+    <div
+      name="contact"
+      className="w-full h-screen bg-slate-950 flex justify-center items-center p-6"
+    >
       <div className="bg-white p-6 rounded-lg shadow-md w-96">
         <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
         <form onSubmit={handleSubmit}>
@@ -42,7 +58,10 @@ const Contact = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-600 font-semibold">
+            <label
+              htmlFor="email"
+              className="block text-gray-600 font-semibold"
+            >
               Email
             </label>
             <input
@@ -50,14 +69,23 @@ const Contact = () => {
               id="email"
               name="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-gray-400 p-2 rounded-md focus:outline-none focus:border-purple-600"
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setEmailError("");
+              }}
+              className={`w-full border ${
+                emailError ? "border-red-500" : "border-gray-400"
+              } p-2 rounded-md focus:outline-none focus:border-purple-600`}
               placeholder="Your Email Address"
               required
             />
+            {emailError && <p className="text-red-500">{emailError}</p>}
           </div>
           <div className="mb-4">
-            <label htmlFor="message" className="block text-gray-600 font-semibold">
+            <label
+              htmlFor="message"
+              className="block text-gray-600 font-semibold"
+            >
               Message
             </label>
             <textarea
