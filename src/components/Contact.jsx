@@ -14,32 +14,22 @@ const Contact = () => {
   };
 
   // Function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validate email
     if (!validateEmail(email)) {
+      // Will not allow form to be submitted if email is invalid
       setEmailError("Please enter a valid email address");
       return;
     }
-
+    // Check to see that all fields are filled in
     if (!name || !email || !message) {
       alert("Please fill in all the fields");
       return;
     }
-
-    // Validation successful, submit the form
-   try {
-    const response = await submitForm({ name, email, message });
-    if (response.success) {
-      alert("Form submitted successfully");
-    } else {
-      alert("Form submission failed, Please try again");
-    }
-    } catch (error) {
-      console.error("Error submitting the form", error);
-      alert("Error occurred while submitting the form, Please try again later");
-    }
-   };
+    // Simulate form submission (no sever in this example, so just a simple alert message)
+    alert("Form submitted successfully");
 
     // Reset the form fields here if needed
     setName("");
@@ -48,6 +38,33 @@ const Contact = () => {
     setEmailError("");
   };
 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    // Validation successful, submit the form create. Create submitForm.js file in later updates 
+    //to handle form submission logic 
+
+   //try {
+    //const response = await submitForm({ name, email, message });
+
+    //if (response.success) {
+      //alert("Form submitted successfully");
+    //} else {
+      //alert("Form submission failed, Please try again");
+    //}
+
+    // Reset the form fields here if needed
+    //setName("");
+    //setEmail("");
+    //setMessage("");
+    //setEmailError("");
+  //} catch (error) {
+    //console.error("Error submitting the form", error);
+    //alert("Error occurred while submitting the form, Please try again later");
+  //}
+  //};
+  ///////////////////////////////////////////////////////////////////////////////////////
+
+
+  // Contact form submission function
   return (
     <div
       name="contact"
