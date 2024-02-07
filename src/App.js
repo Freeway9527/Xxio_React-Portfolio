@@ -1,6 +1,5 @@
 import React from 'react';
 import NavBar from './components/NavBar';
-import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
 import Resume from './components/Resume';
@@ -13,11 +12,10 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<About />} />
       </Routes>
       <Footer />
     </>
