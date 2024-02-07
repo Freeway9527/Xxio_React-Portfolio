@@ -1,12 +1,13 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
+import '../index.css';
 
 const Footer = () => {
     return (
       <footer>
         <div>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/xeng-xiong-17a8b1268/" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
           {' | '}
