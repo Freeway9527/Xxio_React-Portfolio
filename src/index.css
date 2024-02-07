@@ -23,9 +23,69 @@ footer {
     padding: 5px; 
     text-align: center; 
     z-index: 1000; 
+    background-color: #333;
+    color: white;
 }
 
 footer a {
     font-size: 35px;
     color: white;
 }
+
+/* Projects.css */
+.project-card {
+    width: 300px; 
+    margin: 20px;
+    background-color: #333; 
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .project-image {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .project-info {
+    margin-top: 10px;
+  }
+
+  .project-info h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 5px;
+  }
+  
+  .project-info p {
+    font-size: 1rem;
+    color: #ccc;
+  }
+
+  .projects-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; 
+    margin-top: 200px;
+
+  }
+  
+  .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; 
+    padding-top: 20px; 
+    margin-top: 300px;
+  
+  }
+  
+  
+ 
+
+

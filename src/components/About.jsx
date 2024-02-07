@@ -10,7 +10,6 @@ const About = () => {
         <h2 className='text-purple-600 text-2xl'>I am a Full Stack Developer</h2>
       </div>
 
-
     </div>
   );
 };
