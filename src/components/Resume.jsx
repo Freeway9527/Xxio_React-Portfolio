@@ -1,5 +1,5 @@
 import React from 'react';
-import ResumePDF from '../assets/files/X.Xiong-Resume.pdf';
+// import ResumePDF from 
 
 const Resume = () => {
   return (
